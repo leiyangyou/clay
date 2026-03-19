@@ -192,6 +192,22 @@
     </div>
     <div id="sidebar-resize-handle"></div>
     <div id="sidebar-overlay"></div>
+
+    <!-- Mate sidebar (separate from project sidebar, shown during mate DM) -->
+    <div id="mate-sidebar-column" class="hidden">
+      <div class="mate-sidebar-header">
+        <img id="mate-sidebar-avatar" class="mate-sidebar-avatar" alt="">
+        <span id="mate-sidebar-name" class="mate-sidebar-name"></span>
+      </div>
+      <div class="mate-sidebar-sessions-header">
+        <span>Sessions</span>
+        <div class="mate-sidebar-actions">
+          <button id="mate-new-session-btn" type="button" title="New session"><i data-lucide="plus"></i></button>
+        </div>
+      </div>
+      <div id="mate-session-list" class="mate-session-list"></div>
+    </div>
+
     <div id="main-column">
       <div class="dm-header-bar" id="dm-header-bar">
         <img id="dm-header-avatar" class="dm-header-avatar" alt="">
