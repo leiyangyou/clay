@@ -243,6 +243,45 @@
   border: 2px solid var(--bg-alt, #0d0d1a);
 }
 
+/* Step 3: Communication style cards */
+.mate-style-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.mate-style-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 12px 14px;
+  background: var(--input-bg, #1a1a2e);
+  border: 2px solid var(--border, #333);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  text-align: left;
+  color: var(--text, #fff);
+  font-family: inherit;
+}
+.mate-style-card:hover {
+  border-color: var(--text-dimmer, #6272a4);
+}
+.mate-style-card.selected {
+  border-color: var(--accent, #6c5ce7);
+  background: var(--accent-bg, rgba(108,92,231,0.12));
+}
+.mate-style-label {
+  font-weight: 600;
+  font-size: 13px;
+}
+.mate-style-example {
+  font-size: 11px;
+  color: var(--text-muted, #9ea8c7);
+  font-style: italic;
+  line-height: 1.4;
+}
+
 /* Step 4: Autonomy options */
 .mate-autonomy-options {
   display: flex;
@@ -461,6 +500,40 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+#mate-sidebar-tools {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 8px 4px;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+#mate-sidebar-tools button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+#mate-sidebar-tools button:hover {
+  background: var(--sidebar-hover);
+  color: var(--text-secondary);
+}
+
+#mate-sidebar-tools button svg {
+  width: 16px;
+  height: 16px;
 }
 
 .mate-sidebar-sessions-header {
