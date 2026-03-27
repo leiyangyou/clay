@@ -1,14 +1,135 @@
 # Clay
 
+<!-- HERO IMAGE: media/hero.png (새로 촬영)
+     촬영 가이드:
+     - 정적 스크린샷, GIF 아님. 1400x900, 다크 테마.
+     - 왼쪽 아이콘 스트립: 프로젝트 아이콘 2-3개 활성 상태
+     - 사이드바: Mate 아바타들 (슈리, 마키, 아키 등) + 세션 리스트
+     - 메인 영역: Claude가 코드 블록과 함께 답변 중인 채팅
+     - 상단: "2 online" 같은 프레즌스 뱃지 보이게
+     - 목적: "터미널이 아닌 앱", "혼자가 아닌 팀", "여러 프로젝트 동시" 세 가지를 한 장에
+     - 촬영 후 이 주석 삭제하고 아래 img 태그 활성화
+-->
 <p align="center">
-  <img src="media/phone.gif" alt="Clay on phone" width="300">
+  <img src="media/hero.png" alt="Clay workspace" width="700">
 </p>
 
-<h3 align="center">Turn Claude Code into a team workspace. Any device, one command.</h3>
+<h3 align="center">Claude Code for your whole team.</h3>
 
 [![npm version](https://img.shields.io/npm/v/clay-server)](https://www.npmjs.com/package/clay-server) [![npm downloads](https://img.shields.io/npm/dw/clay-server)](https://www.npmjs.com/package/clay-server) [![GitHub stars](https://img.shields.io/github/stars/chadbyte/clay)](https://github.com/chadbyte/clay) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/chadbyte/clay/blob/main/LICENSE)
 
-Clay gives Claude Code a browser UI that runs on any device. Use it from your phone, run it on macOS, Windows, or Linux. Invite teammates, manage multiple projects from one sidebar, and get push notifications when Claude needs you. HTTPS and push notifications work out of the box with zero config. Built on the official Claude Agent SDK, not a terminal parser. Your machine is the server. No cloud relay in between, no extra network surface.
+Claude Code is powerful, but it's one person in one terminal. Clay turns it into a shared workspace where your whole team works together, from any browser. Developers, designers, PMs. Your server, your rules.
+
+```bash
+npx clay-server
+# Scan the QR code to connect from any device
+```
+
+---
+
+## What you get
+
+### One workspace for everything
+
+All your projects, sessions, and teammates in a single browser UI. Add a project and an agent attaches to it. Run backend, frontend, and docs simultaneously. Switch between them in the sidebar.
+
+The server runs as a background daemon. Sessions persist through crashes, restarts, and network drops.
+
+<!-- MULTI-PROJECT GIF: media/split.gif (기존 에셋 유지)
+     현재 split.gif가 이 역할을 잘 하고 있음. 교체 불필요.
+-->
+<p align="center">
+  <img src="media/split.gif" alt="split-screen workflow" width="700">
+</p>
+
+### Bring your whole team
+
+Invite teammates with their own accounts. Set permissions per person, per project, per session. A designer reports a bug in plain language. A junior dev works with guardrails. If someone gets stuck, jump into their session to help in real time.
+
+Add a CLAUDE.md and the AI operates within those rules: explains technical terms simply, escalates risky operations to seniors, summarizes changes in plain words.
+
+Real-time presence shows who's where.
+
+<!-- TEAM GIF: media/team.gif (새로 촬영)
+     촬영 가이드 (20초):
+     1. 유저 A가 세션에서 작업 중인 모습 (프레즌스 뱃지 "1 online")
+     2. 유저 B가 접속 → 프레즌스가 "2 online"으로 바뀌는 순간
+     3. 유저 B가 같은 세션에 들어와서 대화에 참여
+     - 핵심: "혼자 쓰다가 팀원이 합류하는" 순간의 임팩트
+     - 촬영 후 이 주석 삭제하고 아래 img 태그 활성화
+-->
+<p align="center">
+  <img src="media/team.gif" alt="teammate joining a session" width="700">
+</p>
+
+### AI teammates you can @mention
+
+Create AI personas through conversation. Give them a name, avatar, expertise, and communication style. They remember how you work together and carry context across sessions.
+
+@mention them for code review, analysis, or architectural advice. Set up structured debates between them to stress-test decisions before committing.
+
+They sit in your sidebar next to your human teammates. DM them, bring them into projects, create as many as you need. A code reviewer, a marketing lead, a writing partner.
+
+<!-- MATES GIF: media/mates.gif (새로 촬영)
+     촬영 가이드 (20초):
+     1. 사이드바에서 Mate 목록이 보이는 상태
+     2. 채팅에서 @마키 또는 @슈리 멘션 입력
+     3. Mate가 코드를 읽고 분석 답변하는 모습
+     - 핵심: "사이드바에 사람 팀원과 AI 팀원이 나란히 있다"는 느낌
+     - Mate 아바타가 선명하게 보여야 함
+     - 촬영 후 이 주석 삭제하고 아래 img 태그 활성화
+-->
+<p align="center">
+  <img src="media/mates.gif" alt="mentioning an AI teammate" width="700">
+</p>
+
+### Runs as a service
+
+Clay runs as a daemon on your server. Close your laptop, log out, go to sleep. Sessions keep running.
+
+Schedule tasks with cron. Set up autonomous coding loops with Ralph Loop: define a task (`PROMPT.md`) and success criteria (`JUDGE.md`), and the agent iterates until the judge says PASS. Based on [Geoffrey Huntley's Ralph Wiggum technique](https://ghuntley.com/loop/).
+
+Your phone buzzes when Claude needs approval, finishes a task, or hits an error. Install as a PWA for native-like push notifications.
+
+<!-- RUNS AS SERVICE: 두 에셋 병렬 배치
+     왼쪽: media/phone.gif (기존 에셋) - 폰에서 Clay 접속하는 모습
+     오른쪽: media/push-notification.jpg (기존 에셋) - 푸시 알림
+     데스크톱 hero에서 "이건 앱이구나" → 여기서 "폰에서도 되네" 1-2 펀치
+-->
+<p align="center">
+  <img src="media/phone.gif" alt="Clay on phone" width="280">
+  &nbsp;&nbsp;&nbsp;
+  <img src="media/push-notification.jpg" alt="push notification" width="280">
+</p>
+
+---
+
+## How a bug gets fixed
+
+**Without Clay:**
+Designer finds a bug → writes up a ticket on Asana → dev asks clarifying questions → PM prioritizes → dev opens terminal, fixes it → shares a preview → QA checks → deploy
+<br>*7 steps. 3 people. 2 days.*
+
+**With Clay:**
+Designer opens Clay in the browser, describes the bug in plain language → senior joins the same session, reviews the fix together → merge
+<br>*The designer never touched a terminal. The senior never left the workspace.*
+
+---
+
+## How Clay compares
+
+*As of March 2026.*
+
+| | CLI | Remote Control | Channels | **Clay** |
+|---|---|---|---|---|
+| Multi-user with roles | – | – | Platform-dependent | **Accounts + RBAC** |
+| AI teammates (Mates) | – | – | – | **Yes** |
+| Join teammate's session | – | – | – | **Yes** |
+| Persistent daemon | – | Session-based | – | **Yes** |
+| Native mobile app | – | **Yes** | **Platform app** | PWA |
+| Official support | **Anthropic** | **Anthropic** | **Anthropic** | Community |
+
+Clay is a community project, not affiliated with Anthropic. Official tools receive guaranteed support and updates.
 
 ---
 
@@ -25,72 +146,15 @@ Scan the QR code to connect from your phone instantly.
 
 For remote access, use a VPN like Tailscale.
 
+<!-- START GIF: media/start.gif (기존 에셋 유지, 교체 고려)
+     현재 start.gif는 터미널에서 실행하는 모습만 보여줌.
+     더 강한 버전: npx clay-server → QR 코드 → 폰에서 스캔 → 브라우저 열림 (15초)
+     "한 줄 치면 끝"이라는 걸 시각적으로 증명.
+     기존 것으로도 충분하면 유지. 교체하려면 위 흐름으로 재촬영.
+-->
 <p align="center">
   <img src="media/start.gif" alt="Clay starting from CLI" width="600">
 </p>
-
----
-
-## Multi-session, multi-project
-
-Add a project in the browser and an agent attaches to it.
-Run backend, frontend, and docs simultaneously. Switch between them in the sidebar.
-
-The server runs as a background daemon. Sessions persist even after you close the terminal.
-
-Mermaid diagrams render as diagrams. Tables render as tables.
-Code blocks highlight 180+ languages.
-Browse project files in the file browser — changes reflect live while the agent works.
-
-<p align="center">
-  <img src="media/split.gif" alt="split-screen workflow" width="700">
-</p>
-
----
-
-## Multi-user
-
-Invite teammates and give them access to a project. They talk to Claude Code directly in the browser — no terminal, no setup on their end.
-
-Add a CLAUDE.md and the AI operates within those rules: explains technical terms in plain language, escalates risky operations to seniors, summarizes changes in simple words.
-
-If someone gets stuck, join their session to unblock them in real time. Permissions can be separated per project and per session. Real-time presence shows who's where.
-
----
-
-## Mates
-
-Build your team, even if you're solo.
-
-Mates are AI teammates you create through conversation. Interview them, give them a name, avatar, and role. A code reviewer, a marketing lead, a writing partner. They remember how you work together and carry context across sessions.
-
-They sit in your sidebar next to your human teammates. DM them, bring them into projects, let them work autonomously. In a multi-user workspace, your whole team, human and AI, works in one place.
-
-<!-- screenshot: sidebar with Mates visible -->
-
----
-
-## Mobile & notifications
-
-Phone, tablet, couch. All you need is a browser.
-Pick up a terminal session in the browser. Continue a browser session from another device.
-One QR code to connect. Install as a PWA for a native-like experience.
-
-When Claude asks for approval, your phone buzzes. You also get notified on completion or error. No need to keep the browser open.
-
-<p align="center">
-  <img src="media/push-notification.jpg" alt="push notification" width="300">
-</p>
-
----
-
-## Automation
-
-The scheduler kicks off agents at set times.
-Have it check open issues and submit PRs every morning at 8 AM.
-Or compile world news and email you a digest every day.
-
-Take it further with Ralph Loop, an autonomous coding loop built into Clay. The agent works, commits, and a judge evaluates. If it fails, a fresh session starts over with no memory of the previous attempt. Only the code carries over. Based on [Geoffrey Huntley's Ralph Wiggum technique](https://ghuntley.com/loop/).
 
 ---
 
@@ -99,39 +163,6 @@ Take it further with Ralph Loop, an autonomous coding loop built into Clay. The 
 Your data flows directly from your machine to the Anthropic API, exactly as it does when you use the CLI. Clay adds a browser layer on top, not a middleman.
 
 HTTPS is enabled by default with a builtin certificate. PIN authentication and per-project/session permissions are built in. For local network use, this is sufficient. For remote access, we recommend a VPN like Tailscale.
-
----
-
-## Why Clay?
-
-*As of March 2026.*
-
-| | CLI + Remote Control | tmux | Desktop | Cowork | **Clay** |
-|---|---|---|---|---|---|
-| Multi-user | ❌ | ✅ | ❌ | ❌ | ✅ |
-| Mobile / PWA | ✅ | ➖ | ➖ | ➖ | ✅ |
-| Push notifications | 🟠 | ❌ | 🟠 | ❌ | ✅ |
-| GUI | 🟠 | ❌ | ✅ | ✅ | ✅ |
-| Scheduler (cron) | 🟠 | ❌ | ✅ | ✅ | ✅ |
-| Scheduler survives logout | ❌ | ➖ | 🟠 | 🟠 | ✅ |
-| Join teammate's session | ❌ | 🟠 | ❌ | ❌ | ✅ |
-
-✅ Supported · 🟠 Partial / limited · ❌ Not supported · ➖ N/A
-
----
-
-## Key Features
-
-* **Mates** - AI teammates with persistent identity, context, and memory. Create through an interview, DM them, collaborate across sessions.
-* **Multi-user** - Accounts, invitations, per-project/session permissions, real-time presence.
-* **Multi-agent** - Parallel agents per project, sidebar switching.
-* **Push notifications** - Approval, completion, error. Native-like PWA experience.
-* **Scheduler** - Cron-based automatic agent execution.
-* **Ralph Loop** - Autonomous coding loop. The agent works, a judge evaluates, and it iterates until it passes.
-* **File browser** - File exploration, syntax highlighting, live reload.
-* **Built-in terminal** - Multi-tab terminal, mobile keyboard support.
-* **Session search** - Full-text search across all conversation history.
-* **Session persistence** - Survives crashes, restarts, and network drops.
 
 ---
 
@@ -156,13 +187,7 @@ No. Teammates share the Claude Code session logged in on the server. If needed, 
 Yes. MCP configurations from the CLI carry over as-is.
 
 **"What are Mates?"**
-AI teammates you create through a conversation. Each Mate has a name, avatar, personality, and persistent memory. They live in your sidebar and you can DM them or bring them into projects.
-
-**"How is a Mate different from Claude Projects?"**
-Claude Projects save prompts and files as context. A Mate is a teammate. It has its own identity formed through an interview, remembers how you work together across sessions, and exists alongside your human teammates in the workspace. You're not organizing prompts. You're building a team.
-
-**"Can I create multiple Mates?"**
-Yes. Create as many as you need. A code reviewer, a writing partner, a project manager. Each one is independent.
+AI teammates you create through a conversation. Each Mate has a name, avatar, personality, and persistent memory. They live in your sidebar alongside your human teammates. Create as many as you need: a code reviewer, a writing partner, a project manager.
 
 ---
 
