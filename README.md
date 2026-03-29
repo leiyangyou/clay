@@ -1,12 +1,17 @@
 # Clay
 
 <!-- HERO IMAGE: media/hero.png (새로 촬영)
+     데모 환경: Kiln (가상 SaaS 스타트업)
+     유저: Alex (Founder/Engineer), Sora (Designer)
+     Mate: Rumi (코드 리뷰어), Nova (마케터)
+     프로젝트: kiln-app
+
      촬영 가이드:
      - 정적 스크린샷, GIF 아님. 1400x900, 다크 테마.
-     - 왼쪽 아이콘 스트립: 프로젝트 아이콘 2-3개 활성 상태
-     - 사이드바: Mate 아바타들 (슈리, 마키, 아키 등) + 세션 리스트
-     - 메인 영역: Claude가 코드 블록과 함께 답변 중인 채팅
-     - 상단: "2 online" 같은 프레즌스 뱃지 보이게
+     - 왼쪽 아이콘 스트립: kiln-app 프로젝트 활성 상태
+     - 사이드바: Rumi, Nova Mate 아바타 + Sora 유저 + 세션 리스트
+     - 메인 영역: Alex가 kiln-app에서 작업 중, Claude가 코드 블록과 함께 답변
+     - 상단: "2 online" 프레즌스 뱃지 (Alex + Sora)
      - 목적: "터미널이 아닌 앱", "혼자가 아닌 팀", "여러 프로젝트 동시" 세 가지를 한 장에
      - 촬영 후 이 주석 삭제하고 아래 img 태그 활성화
 -->
@@ -14,7 +19,7 @@
   <img src="media/hero.png" alt="Clay workspace" width="700">
 </p>
 
-<h3 align="center">Claude Code for your whole team.</h3>
+<h3 align="center">Claude Code for your whole team. No team? Build one.</h3>
 
 [![npm version](https://img.shields.io/npm/v/clay-server)](https://www.npmjs.com/package/clay-server) [![npm downloads](https://img.shields.io/npm/dw/clay-server)](https://www.npmjs.com/package/clay-server) [![GitHub stars](https://img.shields.io/github/stars/chadbyte/clay)](https://github.com/chadbyte/clay) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/chadbyte/clay/blob/main/LICENSE)
 
@@ -51,31 +56,41 @@ Add a CLAUDE.md and the AI operates within those rules: explains technical terms
 Real-time presence shows who's where.
 
 <!-- TEAM GIF: media/team.gif (새로 촬영)
+     데모 환경: Kiln
+
      촬영 가이드 (20초):
-     1. 유저 A가 세션에서 작업 중인 모습 (프레즌스 뱃지 "1 online")
-     2. 유저 B가 접속 → 프레즌스가 "2 online"으로 바뀌는 순간
-     3. 유저 B가 같은 세션에 들어와서 대화에 참여
+     1. Alex가 kiln-app 세션에서 작업 중 (프레즌스 "1 online")
+     2. Sora가 접속 → 프레즌스 "2 online"으로 바뀌는 순간
+     3. Sora가 같은 세션에서 Claude에게 "이 버튼 색 바꿔줘" 프롬프트 입력
      - 핵심: "혼자 쓰다가 팀원이 합류하는" 순간의 임팩트
+     - 주의: 유저 간 직접 채팅 아님. 각자 Claude에 프롬프트 입력 또는 @멘션
      - 촬영 후 이 주석 삭제하고 아래 img 태그 활성화
 -->
 <p align="center">
   <img src="media/team.gif" alt="teammate joining a session" width="700">
 </p>
 
-### AI teammates you can @mention
+### Build your team with Mates
 
-Create AI personas through conversation. Give them a name, avatar, expertise, and communication style. They remember how you work together and carry context across sessions.
+Mates are AI teammates you create through conversation. Give them a name, avatar, expertise, and working style. A code reviewer who knows your architecture. A marketing lead who tracks your positioning. A writing partner who matches your voice.
 
-@mention them for code review, analysis, or architectural advice. Set up structured debates between them to stress-test decisions before committing.
+They live in your sidebar next to your human teammates. DM them, @mention them in any project session, or bring multiple into the same conversation. Each Mate builds persistent knowledge over time, remembering past decisions, project context, and how you work together.
 
-They sit in your sidebar next to your human teammates. DM them, bring them into projects, create as many as you need. A code reviewer, a marketing lead, a writing partner.
+#### Debate before you decide
+
+Let your Mates challenge each other. Set up a debate. Pick a moderator and panelists, give them a topic, and let them go. You can raise your hand to interject. When it wraps up, you get opposing perspectives from every angle.
+
+"Should we rewrite this in Rust?" "Should we delay the launch to fix onboarding?" "Launch now or wait for v2?" Get real opposing perspectives before you commit.
 
 <!-- MATES GIF: media/mates.gif (새로 촬영)
-     촬영 가이드 (20초):
-     1. 사이드바에서 Mate 목록이 보이는 상태
-     2. 채팅에서 @마키 또는 @슈리 멘션 입력
-     3. Mate가 코드를 읽고 분석 답변하는 모습
-     - 핵심: "사이드바에 사람 팀원과 AI 팀원이 나란히 있다"는 느낌
+     데모 환경: Kiln
+
+     촬영 가이드 (25초):
+     1. 사이드바에 Rumi, Nova Mate + Sora 유저가 보이는 상태
+     2. 채팅에서 @Rumi 멘션 입력 → Rumi가 코드 리뷰 응답
+     3. Debate 시작 → Rumi(모더레이터)가 Nova를 @멘션으로 호출
+     4. 2-3턴 오가는 토론 장면
+     - 핵심: "AI 팀원이 서로 토론한다"는 임팩트
      - Mate 아바타가 선명하게 보여야 함
      - 촬영 후 이 주석 삭제하고 아래 img 태그 활성화
 -->
@@ -112,7 +127,7 @@ Designer finds a bug → writes up a ticket on Asana → dev asks clarifying que
 
 **With Clay:**
 Designer opens Clay in the browser, describes the bug in plain language → senior joins the same session, reviews the fix together → merge
-<br>*The designer never touched a terminal. The senior never left the workspace.*
+<br>*2 steps. 2 people. 10 minutes. The designer never touched a terminal.*
 
 ---
 
@@ -123,7 +138,7 @@ Designer opens Clay in the browser, describes the bug in plain language → seni
 | | CLI | Remote Control | Channels | **Clay** |
 |---|---|---|---|---|
 | Multi-user with roles | – | – | Platform-dependent | **Accounts + RBAC** |
-| AI teammates (Mates) | – | – | – | **Yes** |
+| AI teammates (Mates + Debates) | – | – | – | **Yes** |
 | Join teammate's session | – | – | – | **Yes** |
 | Persistent daemon | – | Session-based | – | **Yes** |
 | Native mobile app | – | **Yes** | **Platform app** | PWA |
@@ -181,13 +196,13 @@ Yes. Pick up a CLI session in the browser, or continue a browser session in the 
 Yes. If your project has a CLAUDE.md, it works in Clay as-is.
 
 **"Does each teammate need their own API key?"**
-No. Teammates share the Claude Code session logged in on the server. If needed, you can configure per-project environment variables to use different API keys.
+No. Teammates share the Claude Code session logged in on the server. If needed, you can configure per-project environment variables to use different API keys for billing isolation.
 
 **"Does it work with MCP servers?"**
 Yes. MCP configurations from the CLI carry over as-is.
 
 **"What are Mates?"**
-AI teammates you create through a conversation. Each Mate has a name, avatar, personality, and persistent memory. They live in your sidebar alongside your human teammates. Create as many as you need: a code reviewer, a writing partner, a project manager.
+AI teammates you shape through conversation. Each Mate has a name, avatar, personality, knowledge base, and persistent memory. They remember past decisions and project context across sessions. @mention them in any conversation, DM them directly, or put them in a structured debate to stress-test ideas. They sit in your sidebar alongside your human teammates.
 
 ---
 
