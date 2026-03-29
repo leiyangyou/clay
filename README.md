@@ -1,23 +1,38 @@
 # Clay
 
-<!-- HERO IMAGE: media/hero.png (새로 촬영)
+<!-- HERO IMAGE: media/hero.png
+     ============================================================
      데모 환경: Kiln (가상 SaaS 스타트업)
+     데모 프로젝트: /Users/chad/projects/kiln-app
      유저: Alex (Founder/Engineer), Sora (Designer)
      Mate: Rumi (코드 리뷰어), Nova (마케터)
-     프로젝트: kiln-app
+     ============================================================
 
-     촬영 가이드:
-     - 정적 스크린샷, GIF 아님. 1400x900, 다크 테마.
-     - 왼쪽 아이콘 스트립: kiln-app 프로젝트 활성 상태
-     - 사이드바: Rumi, Nova Mate 아바타 + Sora 유저 + 세션 리스트
-     - 메인 영역: Alex가 kiln-app에서 작업 중, Claude가 코드 블록과 함께 답변
-     - 상단: "2 online" 프레즌스 뱃지 (Alex + Sora)
-     - 목적: "터미널이 아닌 앱", "혼자가 아닌 팀", "여러 프로젝트 동시" 세 가지를 한 장에
-     - 촬영 후 이 주석 삭제하고 아래 img 태그 활성화
+     ■ 사전 준비
+     1. Clay에 kiln-app 프로젝트 추가: npx clay-server --add /Users/chad/projects/kiln-app
+     2. 유저 2명 생성: Alex (메인), Sora (팀원)
+     3. Mate 2명 생성: Rumi (코드 리뷰어), Nova (마케터) - 인터뷰까지 완료
+     4. Sora 계정으로 로그인해서 kiln-app 세션 하나 열어두기 (프레즌스용)
+
+     ■ 촬영 직전 (Alex 계정)
+     1. kiln-app 프로젝트 선택
+     2. 새 세션 열기
+     3. 프롬프트 입력: "Add rate limiting to the /api/events endpoint. Use express-rate-limit, 100 requests per 15 minutes per IP."
+     4. Claude가 코드 블록과 함께 답변 중일 때 캡처
+
+     ■ 캡처 체크리스트
+     - [ ] 포맷: 정적 스크린샷 PNG, 1400x900, 다크 테마
+     - [ ] 왼쪽 아이콘 스트립: kiln-app 활성
+     - [ ] 사이드바: Rumi, Nova Mate 아바타 + Sora 유저 보임
+     - [ ] 메인 영역: Claude가 코드 블록(express-rate-limit) 답변 중
+     - [ ] 상단: "2 online" 프레즌스 뱃지 (Alex + Sora)
+     - [ ] 세션 리스트에 1-2개 기존 세션 보임 (비어있지 않게)
+
+     ■ 촬영 후: 이 주석 삭제, img 태그 활성화
+     <p align="center">
+       <img src="media/hero.png" alt="Clay workspace" width="700">
+     </p>
 -->
-<p align="center">
-  <img src="media/hero.png" alt="Clay workspace" width="700">
-</p>
 
 <h3 align="center">Claude Code for your whole team. No team? Build one.</h3>
 
@@ -55,20 +70,42 @@ Add a CLAUDE.md and the AI operates within those rules: explains technical terms
 
 Real-time presence shows who's where.
 
-<!-- TEAM GIF: media/team.gif (새로 촬영)
+<!-- TEAM GIF: media/team.gif
+     ============================================================
      데모 환경: Kiln
+     목표: "혼자 쓰다가 팀원이 합류하는" 순간
+     길이: 15-20초
+     ============================================================
 
-     촬영 가이드 (20초):
-     1. Alex가 kiln-app 세션에서 작업 중 (프레즌스 "1 online")
-     2. Sora가 접속 → 프레즌스 "2 online"으로 바뀌는 순간
-     3. Sora가 같은 세션에서 Claude에게 "이 버튼 색 바꿔줘" 프롬프트 입력
-     - 핵심: "혼자 쓰다가 팀원이 합류하는" 순간의 임팩트
-     - 주의: 유저 간 직접 채팅 아님. 각자 Claude에 프롬프트 입력 또는 @멘션
-     - 촬영 후 이 주석 삭제하고 아래 img 태그 활성화
+     ■ 사전 준비
+     1. 브라우저 2개 (또는 시크릿 탭)
+        - 브라우저 A: Alex 로그인
+        - 브라우저 B: Sora 로그인 (아직 kiln-app 세션에 안 들어간 상태)
+     2. Alex로 kiln-app 세션 열고 아무 대화 1-2턴 진행해두기
+        예: "Show me the current API routes" → Claude 답변 완료 상태
+
+     ■ 녹화 시작 (브라우저 A, Alex 화면)
+     0:00  Alex가 kiln-app 세션에서 작업 중. 프레즌스 "1 online"
+     0:03  프롬프트 입력: "Add input validation to the signup endpoint"
+     0:06  Claude가 답변 시작
+     0:08  (브라우저 B에서) Sora가 같은 kiln-app 세션에 입장
+     0:09  Alex 화면에서 프레즌스가 "2 online"으로 바뀌는 순간 포착
+     0:12  Claude 답변 완료
+     0:14  Sora가 프롬프트 입력: "Can you also add email format validation?"
+     0:17  Claude가 Sora 메시지에 답변 시작
+     0:20  녹화 종료
+
+     ■ 체크리스트
+     - [ ] 프레즌스 "1 online" → "2 online" 전환이 화면에 잡힘
+     - [ ] Sora의 유저 아바타가 세션에 나타남
+     - [ ] 유저 간 직접 채팅 아님 (각자 Claude에 프롬프트)
+     - [ ] GIF 루프가 자연스러움
+
+     ■ 촬영 후: 이 주석 삭제, img 태그 활성화
+     <p align="center">
+       <img src="media/team.gif" alt="teammate joining a session" width="700">
+     </p>
 -->
-<p align="center">
-  <img src="media/team.gif" alt="teammate joining a session" width="700">
-</p>
 
 ### Build your team with Mates
 
@@ -82,21 +119,57 @@ Let your Mates challenge each other. Set up a debate. Pick a moderator and panel
 
 "Should we rewrite this in Rust?" "Should we delay the launch to fix onboarding?" "Launch now or wait for v2?" Get real opposing perspectives before you commit.
 
-<!-- MATES GIF: media/mates.gif (새로 촬영)
+<!-- MATES GIF: media/mates.gif
+     ============================================================
      데모 환경: Kiln
+     목표: "@멘션으로 AI 팀원 호출 + Debate 토론" 두 기능을 한 GIF에
+     길이: 20-25초
+     ============================================================
 
-     촬영 가이드 (25초):
-     1. 사이드바에 Rumi, Nova Mate + Sora 유저가 보이는 상태
-     2. 채팅에서 @Rumi 멘션 입력 → Rumi가 코드 리뷰 응답
-     3. Debate 시작 → Rumi(모더레이터)가 Nova를 @멘션으로 호출
-     4. 2-3턴 오가는 토론 장면
-     - 핵심: "AI 팀원이 서로 토론한다"는 임팩트
-     - Mate 아바타가 선명하게 보여야 함
-     - 촬영 후 이 주석 삭제하고 아래 img 태그 활성화
+     ■ 사전 준비
+     1. Mate 생성 완료 상태: Rumi (코드 리뷰어), Nova (마케터)
+     2. kiln-app 세션에서 이미 코드 작업 1-2턴 진행해둔 상태
+        예: rate limiting 코드가 추가된 직후
+
+     ■ 녹화 시작 (Alex 화면)
+
+     === Part 1: @멘션 (0:00-0:10) ===
+     0:00  kiln-app 세션. 사이드바에 Rumi, Nova 아바타 보임
+     0:02  프롬프트 입력: "@Rumi review the rate limiting implementation"
+           (@ 입력 시 자동완성 드롭다운 뜨는 것 포착)
+     0:04  Rumi가 @MENTION 배지와 함께 코드 리뷰 응답 시작
+     0:08  Rumi 답변 완료 (코드 블록 + 개선 제안)
+     0:10  잠시 멈춤 (파트 전환)
+
+     === Part 2: Debate (0:10-0:25) ===
+     0:10  Debate 시작 (UI에서 debate 버튼 클릭 또는 /debate)
+     0:12  주제 입력: "Should we add a paid tier before launch?"
+           모더레이터: Rumi, 패널리스트: Nova
+     0:14  Rumi(모더레이터)가 토론 오프닝
+     0:16  Rumi가 @Nova 멘션으로 호출
+     0:18  Nova가 마케팅 관점에서 의견 제시
+     0:20  Rumi가 기술 관점에서 반론
+     0:23  토론 정리/결론
+     0:25  녹화 종료
+
+     ■ 체크리스트
+     - [ ] @ 입력 시 자동완성 드롭다운이 화면에 잡힘
+     - [ ] @MENTION 배지가 Rumi 응답에 보임
+     - [ ] Debate에서 Mate 아바타 + 이름이 선명하게 구분됨
+     - [ ] 모더레이터가 패널리스트를 @멘션으로 호출하는 순간 포착
+     - [ ] GIF가 25초 이내 (너무 길면 로딩 느림)
+
+     ■ 대안: 멘션과 Debate를 별도 GIF로 분리
+     - mates.gif = 멘션만 (10초)
+     - debate.gif = 토론만 (15초)
+     - README에 img 태그 2개로 나열
+     - 한 GIF에 다 담기 어려우면 이 방식 추천
+
+     ■ 촬영 후: 이 주석 삭제, img 태그 활성화
+     <p align="center">
+       <img src="media/mates.gif" alt="mentioning an AI teammate" width="700">
+     </p>
 -->
-<p align="center">
-  <img src="media/mates.gif" alt="mentioning an AI teammate" width="700">
-</p>
 
 ### Runs as a service
 
@@ -161,11 +234,21 @@ Scan the QR code to connect from your phone instantly.
 
 For remote access, use a VPN like Tailscale.
 
-<!-- START GIF: media/start.gif (기존 에셋 유지, 교체 고려)
-     현재 start.gif는 터미널에서 실행하는 모습만 보여줌.
-     더 강한 버전: npx clay-server → QR 코드 → 폰에서 스캔 → 브라우저 열림 (15초)
-     "한 줄 치면 끝"이라는 걸 시각적으로 증명.
-     기존 것으로도 충분하면 유지. 교체하려면 위 흐름으로 재촬영.
+<!-- START GIF: media/start.gif
+     ============================================================
+     기존 에셋 유지 가능. 교체 시 아래 가이드.
+     목표: "한 줄이면 끝"
+     길이: 10-15초
+     ============================================================
+
+     ■ 교체 촬영 가이드 (선택)
+     0:00  터미널에서 npx clay-server 입력
+     0:03  서버 시작, QR 코드 표시
+     0:06  폰으로 QR 스캔
+     0:09  브라우저에 Clay UI 열림
+     0:12  녹화 종료
+
+     ■ 기존 start.gif로 충분하면 교체 불필요
 -->
 <p align="center">
   <img src="media/start.gif" alt="Clay starting from CLI" width="600">
