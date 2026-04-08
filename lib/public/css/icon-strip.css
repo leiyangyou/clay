@@ -236,6 +236,7 @@
   opacity: 1;
   background: var(--success);
 }
+
 @keyframes permShake {
   0%, 8% { transform: translateX(0); }
   1% { transform: translateX(-2px); }
@@ -608,6 +609,7 @@
 }
 
 /* --- Emoji picker popover --- */
+
 .emoji-picker {
   position: fixed;
   background: var(--sidebar-bg);
@@ -651,6 +653,44 @@
 
 .emoji-picker-remove:hover {
   background: var(--error-8);
+}
+
+/* Search input */
+.emoji-picker-search {
+  padding: 0 2px 6px;
+  flex-shrink: 0;
+}
+
+.emoji-picker-search-input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: rgba(var(--overlay-rgb), 0.04);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.emoji-picker-search-input:focus {
+  border-color: var(--accent, #6366f1);
+}
+
+.emoji-picker-search-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+/* No results message */
+.emoji-picker-no-results {
+  text-align: center;
+  padding: 24px 8px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  opacity: 0.7;
 }
 
 /* Category tab bar */
@@ -745,6 +785,14 @@
 .emoji-picker-item img.emoji {
   width: 22px;
   height: 22px;
+}
+
+.emoji-picker-empty {
+  padding: 24px 12px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+  opacity: 0.7;
 }
 
 /* --- User avatars (circle, above my-avatar at bottom) --- */
