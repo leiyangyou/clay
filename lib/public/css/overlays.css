@@ -636,6 +636,96 @@ button.top-bar-pill.pill-accent:hover { background: color-mix(in srgb, var(--acc
 
 .confirm-ok:hover { opacity: 0.85; }
 
+/* --- Transcript export modal --- */
+#transcript-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#transcript-modal.hidden { display: none; }
+
+.transcript-dialog {
+  max-width: 520px;
+  width: 94%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 28px;
+}
+
+.transcript-title {
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.transcript-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.transcript-select-all {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.transcript-turns-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 16px;
+  max-height: 50vh;
+}
+
+.transcript-turn-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.transcript-turn-item:hover {
+  background: rgba(var(--overlay-rgb), 0.06);
+}
+
+.transcript-turn-item input[type="checkbox"] {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.transcript-turn-preview {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.transcript-turn-index {
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  min-width: 20px;
+}
+
 /* --- Remove project task dialog --- */
 .remove-project-task-modal {
   position: fixed;
