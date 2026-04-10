@@ -34,10 +34,10 @@ Previous round (0.2.38 through 0.2.76) is archived at the bottom.
 ### Priority 2 - Medium (Improved reliability, better UX)
 
 #### 2.1 `reloadPlugins()` query method (since 0.2.83+)
-- **Status:** Not started
+- **Status:** ✅ Done
 - **What:** Hot-reload MCP servers, skills, agents, and hooks without restarting the session. Returns `SDKControlReloadPluginsResponse` with updated lists and error count.
 - **Impact:** Currently adding/removing MCP servers requires session restart. This enables live reconfiguration.
-- **Where:** `sdk-bridge.js` - expose via WebSocket command. Call `session.queryInstance.reloadPlugins()`.
+- **Where:** `sdk-bridge.js` `reloadPlugins()`, `sdk-worker.js` `handleReloadPlugins()`, `project.js` WS handler `reload_plugins`. Frontend: `/reload-plugins` builtin command in `input.js`, `plugins_reloaded` message handler in `app.js`. Auto-triggers after skill install/uninstall in `project.js`.
 
 #### 2.2 `seedReadState()` query method (since 0.2.85+)
 - **Status:** Not started
