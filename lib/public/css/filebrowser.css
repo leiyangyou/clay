@@ -305,6 +305,10 @@
   text-align: center;
 }
 
+.ps-icon-preview img {
+  display: block;
+}
+
 .ps-icon-preview:empty::after {
   content: "—";
   font-size: 14px;
